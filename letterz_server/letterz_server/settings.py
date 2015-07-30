@@ -122,3 +122,8 @@ RQ_QUEUES = {
         'DB': 0,
     },
 }
+
+if DEBUG:
+    SECONDS_IN_HOUR = 1
+else:
+    SECONDS_IN_HOUR = 3600

@@ -19,9 +19,11 @@ Make sure redis is installed and running (on its default port 6379)
     python manage.py migrate
     python manage.py createsuperuser
 
-    # run the server @ localhost:8000
-    # and the queue worker
-    python manage.py runserver & python manage.py rqworker default
+    # run the server @ localhost:8000,
+    # the queue worker and the queue scheduler
+    python manage.py runserver & \
+      python manage.py rqworker default & \
+      python manage.py rqscheduler
 
 ### eMail configurations
 

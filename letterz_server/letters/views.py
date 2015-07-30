@@ -1,3 +1,7 @@
+from datetime import datetime, timedelta
+
+from django.conf import settings
+
 from rest_framework import generics
 import django_rq
 
@@ -12,6 +16,10 @@ class LetterCreate(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         letter = serializer.save()
         django_rq.enqueue(mail.send_imidiate_notifications, letter)
+        till_sending = 24 * 3 * settings.SECONDS_IN_HOUR
+        sending_datetime = datetime.now() + timedelta(seconds=till_sending)
+        scheduler = django_rq.get_scheduler()
+        scheduler.enqueue_at(sending_datetime, mail.send_letter, letter)
 
 
 class LetterDetail(generics.RetrieveUpdateDestroyAPIView):

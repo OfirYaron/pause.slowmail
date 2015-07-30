@@ -17,6 +17,7 @@ def send_letter_notification(letter):
         'You will receive your egeret from {} in few days.'.format(letter.sender),
     )
 
+
 def send_letter(letter):
     """Sent when the letter arives to the recipient"""
     letter_based_send_mail(
@@ -31,3 +32,8 @@ def send_sender_notification(letter):
     send_mail('eGeret is going to send an eMail on your behalf',
               'Contact us on egeret.mail@gmail.com if it wasn\'t you',
               EMAIL_HOST_USER, [letter.sender], fail_silently=False)
+
+
+def send_imidiate_notifications(letter):
+    send_sender_notification(letter)
+    send_letter_notification(letter)

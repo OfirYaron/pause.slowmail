@@ -1,3 +1,9 @@
+###Dependencies
+
+Make sure redis is installed and running (on its default port 6379)
+
+    redis-server
+
 ###How to start the server
 
     cd letterz_server
@@ -14,7 +20,8 @@
     python manage.py createsuperuser
 
     # run the server @ localhost:8000
-    python manage.py runserver
+    # and the queue worker
+    python manage.py runserver & python manage.py rqworker default
 
 ### eMail configurations
 

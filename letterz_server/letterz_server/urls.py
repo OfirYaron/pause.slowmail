@@ -16,9 +16,8 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from letters import urls as letters_urls
-
 urlpatterns = [
+    url(r'^admin/django-rq/', include('django_rq.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^', include(letters_urls))
+    url(r'^', include('letters.urls'))
 ]

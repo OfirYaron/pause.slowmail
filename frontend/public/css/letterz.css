@@ -1,0 +1,16 @@
+.spread-bottom{
+    min-height:100%;
+}
+
+#paper{
+
+}
+
+#main-container{
+    padding-top: 20px;
+}
+
+#paper textarea{
+    height:100%;
+    width:100%;
+}

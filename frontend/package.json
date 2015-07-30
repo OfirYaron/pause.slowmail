@@ -1,0 +1,25 @@
+{
+  "name": "ofiryaron.com",
+  "Version": "0.0.1",
+  "description": "ofiryaron portal",
+  "main": "server.js",
+  "author": {
+    "name": "Ofir Yaron",
+    "email": "ofirya@gmail.com"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "dependencies": {
+    "bower": "1.3.x",
+    "express": "^4.11.1",
+    "http": "0.0.0",
+    "request": "^2.60.0",
+    "sync-request": "^2.0.1",
+    "vash": "^0.7.12-1"
+  },
+  "scripts": {
+    "postinstall": "./node_modules/bower/bin/bower install"
+  },
+  "devDependencies": {}
+}

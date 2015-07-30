@@ -1,0 +1,15 @@
+{
+  "name": "ofiryaron.com",
+  "version": "0.0.0",
+  "homepage": "www.ofiryaron.com",
+  "authors": [
+    "Ofir Yaron"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "angular-route": "~1.3.11",
+    "bootstrap": "~3.3.2",
+    "foundation": "~5.5.0",
+    "jquery-easing": "*"
+  }
+}

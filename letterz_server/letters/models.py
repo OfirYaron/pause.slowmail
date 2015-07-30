@@ -20,3 +20,6 @@ class Letter(models.Model):
                               default=random_hex,
                               blank=True,
                               unique=True)
+
+    def __str__(self):
+        return 'Letter {}'.format(self.hex_id)

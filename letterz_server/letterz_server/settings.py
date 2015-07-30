@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'rest_framework',
+    'django_rq',
 
     'letters',
 )
@@ -104,3 +105,25 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+ADMINS = ((os.environ.get('ADMIN'), os.environ.get('ADMIN_EMAIL')),)
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = 587
+
+RQ_SHOW_ADMIN_LINK = True
+RQ_QUEUES = {
+    'default': {
+        'HOST': 'localhost',
+        'PORT': 6379,
+        'DB': 0,
+    },
+}
+
+if DEBUG:
+    SECONDS_IN_HOUR = 1
+else:
+    SECONDS_IN_HOUR = 3600

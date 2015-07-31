@@ -85,8 +85,9 @@
 
             <div class="col-md-2 spread-bottom side-panel">
                 <div>
-                    <button ng-click="sendLetter()">Send</button>
-                    <button id="toss" ng-click="tossLetter()">Toss</button>
+                    <a href="javascript:void(0)" ng-click="sendLetter()" id="sendButton"></a>
+                    <a href="javascript:void(0)" ng-click="tossLetter()" id="tossButton"></a>
+                    <!--<button id="toss" ng-click="tossLetter()">Toss</button>-->
                 </div>
             </div>
         </div>

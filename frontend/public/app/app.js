@@ -52,10 +52,7 @@ myAppModule.factory("restGate", ["$http",function ($http) {
         if ((charCode >= 48 && charCode <=57) ||
             (charCode>=65 && charCode <= 90) ||
             (charCode == 32 || charCode == 186 || charCode == 222 || charCode == 188 || charCode == 190 || charCode == 191)){
-            //if (charCode > 31 &&
-            //    (charCode < 58 || charCode > 107 || charCode > 219 || charCode > 221) &&  //charCode < 48 || charCode > 57 ||
-            //    charCode != 40 && charCode != 41 && (charCode < 43 || charCode > 46)) {
-            return keyCodeToUnicodeHebrew(key.keyCode);
+            return keyCodeToUnicodeHebrew(charCode);
         }
         else {
             return ''
@@ -71,9 +68,9 @@ myAppModule.factory("restGate", ["$http",function ($http) {
             81: '\u2215', 82: '\u05E8', 83: '\u05D3', 84: '\u05D0',  // Q-T
             85: '\u05D5', 86: '\u05D4', 87: '\u0027', 88: '\u05E1',  // U-X
             89: '\u05D8', 90: '\u05D6',                              // Y-Z
-            188: '\u05EA', 32: '\u0020'                              // Non english chars
+            188: '\u05EA', 32: '\u0020', 191: '\u002E', 222: '\u002C'  // Non english chars
         };
-        return mapping[keyCode]
+        return mapping[keyCode] || String.fromCharCode(keyCode)
     };
 
     return {

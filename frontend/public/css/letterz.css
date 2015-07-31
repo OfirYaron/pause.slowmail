@@ -30,8 +30,34 @@ textarea {
     bottom: 40px;
 }
 
-#send{
+#sendButton{
+    display: block;
+    width: 35px;
+    height: 35px;
+    background-image: url('/images/env_button_white.png');
+    background-size: contain;
+}
 
+#sendButton:hover{
+    display: block;
+    width: 35px;
+    height: 35px;
+    background-image: url('/images/env_button_black.png');
+}
+
+#tossButton{
+    display: block;
+    width: 35px;
+    height: 35px;
+    background-image: url('/images/trash_button_white.png');
+    background-size: contain;
+}
+
+#tossButton:hover{
+    display: block;
+    width: 35px;
+    height: 35px;
+    background-image: url('/images/trash_button_black.png');
 }
 
 .env{
@@ -55,3 +81,4 @@ img.logo{
     top: 14px;
     position: relative;
 }
+

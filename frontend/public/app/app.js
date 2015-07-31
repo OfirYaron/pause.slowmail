@@ -5,7 +5,7 @@ var myAppModule = angular.module('app', []);
 
 myAppModule.factory("restGate", ["$http",function ($http) {
 
-    var host = 'http://localhost:8000/api';
+    var host = '/api';
 
     var pushLetter = function(fromName, fromEmail, toName, toEmail, content, settings){
         console.log('sending...');

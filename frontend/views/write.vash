@@ -12,10 +12,14 @@
     <title>Letterz</title>
 
     <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <!--<link href="/css/aside.css" rel="stylesheet"/>-->
+    <!--<link href="/css/animate.css" rel="stylesheet"/>-->
     <link href="/css/letterz.css" rel="stylesheet"/>
+
     <script src="/lib/angular/angular.js"></script>
+    <!--<script src="/app/aside.js"></script>-->
     <script src="/app/app.js"></script>
-    <script src="/app/keyMapperService.js"></script>
+    <!--<script src="/app/keyMapperService.js"></script>-->
     <script src="/app/writecontroller.js"></script>
 
 </head>

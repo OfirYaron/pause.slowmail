@@ -5,16 +5,16 @@ var myAppModule = angular.module('app', []);
 
 myAppModule.factory("restGate", ["$http",function ($http) {
 
-    var host = 'http://localhost:1212';
+    var host = 'http://localhost:8000/api';
 
     var pushLetter = function(fromName, fromEmail, toName, toEmail, content, settings){
         console.log('sending...');
-        $http.post(host + '/push',
+        $http.post(host + '/',
             {
-                fromName:fromName,
-                fromEmail:fromEmail,
-                toName:toName,
-                toEmail:toEmail,
+                from_name:fromName,
+                from_email:fromEmail,
+                to_name:toName,
+                to_email:toEmail,
                 content:content,
                 settings:settings
             }).
@@ -26,7 +26,7 @@ myAppModule.factory("restGate", ["$http",function ($http) {
 
     var popLetter = function(guid){
         console.log('getting...');
-        $http.get(host + '/get?guid=' + guid).
+        $http.get(host + '/' + guid).
             success(function(data, status, headers, config) {
             }).
             error(function(data, status, headers, config) {

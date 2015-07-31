@@ -6,6 +6,11 @@
 myAppModule.controller("writeController", ["$scope","keymapper", "restGate", function ($scope, keyMapper, restGate) {
     $scope.selectedView = 1;
     $scope.text = "התחלה";
+    $scope.fromName = "אופיר";
+    $scope.fromEmail = "a@a.com";
+    $scope.toName = "טום";
+    $scope.toEmail = "ofirya@gmail.com";
+
     console.log('write controller is been loaded');
 
     var handler = function (e) {
@@ -69,4 +74,38 @@ myAppModule.controller("writeController", ["$scope","keymapper", "restGate", fun
     $scope.tossLetter = function () {
         $scope.text = '';
     };
+
+    //$scope.asideState = {
+    //    open: false
+    //};
+    //
+    //$scope.openAside = function(position, backdrop) {
+    //    $scope.asideState = {
+    //        open: true,
+    //        position: position
+    //    };
+    //
+    //    function postClose() {
+    //        $scope.asideState.open = false;
+    //    }
+    //
+    //    $aside.open({
+    //        //templateUrl: 'aside.html',
+    //        template: 'blaaaa',
+    //        placement: position,
+    //        size: 'sm',
+    //        backdrop: backdrop,
+    //        controller: function($scope, $modalInstance) {
+    //            $scope.ok = function(e) {
+    //                $modalInstance.close();
+    //                e.stopPropagation();
+    //            };
+    //            $scope.cancel = function(e) {
+    //                $modalInstance.dismiss();
+    //                e.stopPropagation();
+    //            };
+    //        }
+    //    }).result.then(postClose, postClose);
+    //}
+
 }]);

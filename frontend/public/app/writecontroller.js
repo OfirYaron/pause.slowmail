@@ -1,9 +1,10 @@
 /**
  * Created by ofir on 7/30/15.
  */
-var myAppModule = angular.module('app', []);
+//var myAppModule = angular.module('app',[]);
 
-myAppModule.controller("writeController", ["$scope", "keymapper", function ($scope, keyMapper) {
+myAppModule.controller("writeController", ["$scope", "keymapper", "restGate", function ($scope, keyMapper, restGate) {
+    $scope.selectedView = 1;
     $scope.text = "התחלה";
     console.log('write controller is been loaded');
 
@@ -13,8 +14,7 @@ myAppModule.controller("writeController", ["$scope", "keymapper", function ($sco
         console.log(e);
         console.log("'" + String.fromCharCode(e.keyCode) + "'");
         var key = keyMapper.getMappedKey(e);
-        if (key!='')
-        {
+        if (key != '') {
             console.log('+');
             $scope.text = $scope.text + key;
             $scope.$apply();
@@ -30,37 +30,18 @@ myAppModule.controller("writeController", ["$scope", "keymapper", function ($sco
 
     $scope.keypress = function (e) {
         console.log(e);
-    }
-
-    $scope.sendLetter = function(){
-
     };
 
-    $scope.tossLetter = function(){
-
+    $scope.sendLetter = function () {
+        //alert('sending...');
+        $scope.selectedView = 2;
     };
 
-}]).factory("keymapper", function () {
-    var keyMapping = function (key) {
-        var charCode = key.which || key.keyCode;
-        if (event.keyCode === 8)
-            key.preventDefault();
-        if (event.keyCode === 13)
-            return '\n';
-        if ((charCode >= 48 && charCode <=57) ||
-        (charCode>=65 && charCode <= 90) ||
-            (charCode == 32 || charCode == 186 || charCode == 222 || charCode == 188 || charCode == 190 || charCode == 191)){
-        //if (charCode > 31 &&
-        //    (charCode < 58 || charCode > 107 || charCode > 219 || charCode > 221) &&  //charCode < 48 || charCode > 57 ||
-        //    charCode != 40 && charCode != 41 && (charCode < 43 || charCode > 46)) {
-            return String.fromCharCode(key.keyCode);
-        }
-        else {
-            return ''
-        }
+    $scope.validateSend = function () {
+        restGate.test();
     };
 
-    return {
-        getMappedKey: keyMapping
+    $scope.tossLetter = function () {
+        $scope.text = '';
     };
-});
+}]);

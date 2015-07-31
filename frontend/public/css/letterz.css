@@ -1,16 +1,40 @@
+body{
+    background-color: #DBCFAD;
+}
+
+textarea {
+    resize: none;
+}
+
 .spread-bottom{
     min-height:100%;
 }
 
-#paper{
-
-}
-
-#main-container{
+#main-container, #second-container{
     padding-top: 20px;
 }
 
+.side-panel{
+    height: 700px;
+}
+
 #paper textarea{
-    height:100%;
+    height:700px;
     width:100%;
+    padding: 15px;
+}
+
+#toss{
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+}
+
+#send{
+
+}
+
+.env{
+    height:350px;
+    border: 1px solid black;
 }

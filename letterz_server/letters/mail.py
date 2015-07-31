@@ -23,7 +23,7 @@ def send_letter(letter):
     letter_based_send_mail(
         letter,
         'Your eGeret is waiting for you',
-        'Find your egeret at: localhost:8000/{}'.format(hex_id),
+        'Find your egeret at: nagasaki45.com:8080/{}'.format(hex_id),
     )
 
 

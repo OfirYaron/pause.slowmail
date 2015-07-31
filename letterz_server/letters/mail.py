@@ -5,7 +5,7 @@ from django.conf import settings
 def letter_based_send_mail(letter, title, content):
     """The common parts of letter mail and notification"""
     send_mail(title, content, settings.EMAIL_HOST_USER,
-              [letter.to_mail], fail_silently=False)
+              [letter.to_email], fail_silently=False)
 
 
 def send_letter_notification(letter):

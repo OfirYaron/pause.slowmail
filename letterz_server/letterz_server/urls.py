@@ -15,9 +15,18 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.http import HttpResponseRedirect
+
+
+def redirect_to_index(request):
+    return HttpResponseRedirect('index.html/')
+
 
 urlpatterns = [
     url(r'^admin/django-rq/', include('django_rq.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^api/', include('letters.urls'))
+    url(r'^api/', include('letters.urls')),
+    url(r'^$', redirect_to_index),
+    # Statics (including htmls from frontend)
+    url(r'^(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'static'})
 ]

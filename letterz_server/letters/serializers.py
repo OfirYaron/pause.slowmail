@@ -6,4 +6,5 @@ from .models import Letter
 class LetterSerializer(serializers.ModelSerializer):
     class Meta:
         model = Letter
-        fields = ('sender', 'recipient', 'content')
+        fields = ('from_name', 'from_email', 'to_name', 'to_email',
+                  'content', 'settings')

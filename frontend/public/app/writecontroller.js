@@ -3,7 +3,7 @@
  */
 //var myAppModule = angular.module('app',[]);
 
-myAppModule.controller("writeController", ["$scope", "keymapper", "restGate", function ($scope, keyMapper, restGate) {
+myAppModule.controller("writeController", ["$scope","keymapper", "restGate", function ($scope, keyMapper, restGate) {
     $scope.selectedView = 1;
     $scope.text = "התחלה";
     console.log('write controller is been loaded');
@@ -33,12 +33,19 @@ myAppModule.controller("writeController", ["$scope", "keymapper", "restGate", fu
     };
 
     $scope.sendLetter = function () {
-        //alert('sending...');
-        $scope.selectedView = 2;
+        $scope.selectedView += 1;
+        console.log('current step is: ' + $scope.selectedView)
+        if ($scope.selectedView==4)
+            $scope.validateSend();
+
     };
 
+    $scope.back = function(){
+        $scope.selectedView -= 1;
+    }
+
     $scope.validateSend = function () {
-        restGate.test();
+        restGate.sendLetter($scope.fromName, $scope.fromEmail, $scope.toName, $scope.toEmail, $scope.text, {});
     };
 
     $scope.tossLetter = function () {

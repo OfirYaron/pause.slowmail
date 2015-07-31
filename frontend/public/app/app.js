@@ -3,11 +3,12 @@
  */
 var myAppModule = angular.module('app', []);
 
-myAppModule.factory("restGate", function () {
+myAppModule.factory("restGate", ["$http",function ($http) {
 
-    var host = 'http://localhost:1212/';
+    var host = 'http://localhost:1212';
 
     var pushLetter = function(fromName, fromEmail, toName, toEmail, content, settings){
+        console.log('sending...');
         $http.post(host + '/push',
             {
                 fromName:fromName,
@@ -24,6 +25,7 @@ myAppModule.factory("restGate", function () {
     };
 
     var popLetter = function(guid){
+        console.log('getting...');
         $http.get(host + '/get?guid=' + guid).
             success(function(data, status, headers, config) {
             }).
@@ -40,7 +42,7 @@ myAppModule.factory("restGate", function () {
         getLetter:popLetter,
         test: dummy
     }
-}).factory("keymapper", function () {
+}]).factory("keymapper", function () {
     var keyMapping = function (key) {
         var charCode = key.which || key.keyCode;
         if (event.keyCode === 8)

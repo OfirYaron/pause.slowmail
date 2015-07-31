@@ -10,7 +10,7 @@ textarea {
     min-height:100%;
 }
 
-#main-container, #second-container{
+#main-container, #second-container, #third-container{
     padding-top: 20px;
 }
 
@@ -37,4 +37,21 @@ textarea {
 .env{
     height:350px;
     border: 1px solid black;
+}
+
+.env input{
+    border: none;
+    border-bottom: 1px solid gray;
+    background-color: transparent;
+}
+.env span{
+    width: 50px;
+    display: inline-block;
+}
+
+img.logo{
+    width: 110px;
+    float: left;
+    top: 14px;
+    position: relative;
 }

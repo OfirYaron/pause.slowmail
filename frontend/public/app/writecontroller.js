@@ -10,9 +10,6 @@ myAppModule.controller("writeController", ["$scope","keymapper", "restGate", fun
 
     var handler = function (e) {
         var charCode = e.which || e.keyCode;
-        console.log(charCode);
-        console.log(e);
-        console.log("'" + String.fromCharCode(e.keyCode) + "'");
         var key = keyMapper.getMappedKey(e);
         if (key != '') {
             console.log('+');

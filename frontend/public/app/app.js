@@ -55,11 +55,25 @@ myAppModule.factory("restGate", ["$http",function ($http) {
             //if (charCode > 31 &&
             //    (charCode < 58 || charCode > 107 || charCode > 219 || charCode > 221) &&  //charCode < 48 || charCode > 57 ||
             //    charCode != 40 && charCode != 41 && (charCode < 43 || charCode > 46)) {
-            return String.fromCharCode(key.keyCode);
+            return keyCodeToUnicodeHebrew(key.keyCode);
         }
         else {
             return ''
         }
+    };
+
+    var keyCodeToUnicodeHebrew = function (keyCode) {
+        var mapping = {
+            65: '\u05E9', 66: '\u05E0', 67: '\u05D1', 68: '\u05D2',  // A-D
+            69: '\u05E7', 70: '\u05DB', 71: '\u05E2', 72: '\u05D9',  // E-H
+            73: '\u05DF', 74: '\u05D7', 75: '\u05DC', 76: '\u05DA',  // I-L
+            77: '\u05E6', 78: '\u05DE', 79: '\u05DD', 80: '\u05E4',  // M-P
+            81: '\u2215', 82: '\u05E8', 83: '\u05D3', 84: '\u05D0',  // Q-T
+            85: '\u05D5', 86: '\u05D4', 87: '\u0027', 88: '\u05E1',  // U-X
+            89: '\u05D8', 90: '\u05D6',                              // Y-Z
+            188: '\u05EA', 32: '\u0020'                              // Non english chars
+        };
+        return mapping[keyCode]
     };
 
     return {

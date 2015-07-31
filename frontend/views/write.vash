@@ -21,10 +21,12 @@
 </head>
 
 <body dir="rtl" ng-keydown="keypress($event)">
+<!--  ng-keydown="keypress($event)" -->
     <div ng-app="app" ng-controller="writeController">
         <div id="main-container" class="container">
             <div class="col-md-2 spread-bottom side-panel">
                 <img class="logo" src="/images/logo_bigger.png" alt="logo"></img>
+                <!--<input type="text" style="opacity: 50" id="autoFucus" ng-keydown="keypress($event)" autofocus="autofocus" />-->
             </div>
 
             <div id="paper" class="col-md-8 spread-bottom" ng-show="selectedView==1">
@@ -58,14 +60,25 @@
 
             <div class="col-md-8 spread-bottom" ng-show="selectedView==3">
                 <div class="env">
-                    <p>עבור</p>
+                    <p>שולח</p>
                     <div>
-                        <div class="col-md-2">שם</div>
-                        <div class="col-md-8"><input type="text" ng-model="fromName" /></div>
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <div class="col-md-2"></div>
+                            <span>שם</span><input type="text" ng-model="fromName" />
+                            <div class="col-md-2"></div>
+                        </div>
+                        <div class="col-md-2"></div>
                     </div>
+                    <div style="clear:both"></div>
                     <div>
-                        <div class="col-md-2">כתובת</div>
-                        <div class="col-md-8"><input type="text" ng-model="fromEmail" /></div>
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <div class="col-md-2"></div>
+                            <span>כתובת</span><input type="text" ng-model="fromEmail" />
+                            <div class="col-md-2"></div>
+                        </div>
+                        <div class="col-md-2"></div>
                     </div>
                 </div>
             </div>

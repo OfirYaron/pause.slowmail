@@ -25,9 +25,27 @@ myAppModule.controller("writeController", ["$scope","keymapper", "restGate", fun
         $doc.off('keydown', handler);
     });
 
+    //$('body').on('click', function(event){
+    //    //event.preventDefault();
+    //    event.preventDefault();
+    //    setTimeout(function(){
+    //        $scope.setFocus()
+    //    },  1);
+    //    // your code to handle the clicks
+    //});
+
     $scope.keypress = function (e) {
         console.log(e);
+        handler(e);
     };
+
+    //$scope.setFocus = function(){
+    //    console.log('setting focus');
+    //    if ($scope.selectedView == 1) {
+    //        $("#autoFocus").focus();
+    //        console.log('in focus');
+    //    }
+    //};
 
     $scope.sendLetter = function () {
         $scope.selectedView += 1;

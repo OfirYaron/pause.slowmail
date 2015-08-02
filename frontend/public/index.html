@@ -24,12 +24,12 @@
 
 </head>
 
-<body dir="rtl" ng-keydown="keypress($event)">
+<body dir="rtl" ng-keydown="keypress($event)" ng-class="{step1:selectedView==1, step2:selectedView==2, step3:selectedView==3}">
 <!--  ng-keydown="keypress($event)" -->
 <div ng-app="app" ng-controller="writeController">
     <div id="main-container" class="container">
         <div class="col-md-2 spread-bottom side-panel">
-            <img class="logo" src="/images/logo_bigger.png" alt="logo"></img>
+            <img class="logo" src="/images/logo_bigger.png" alt="logo" />
             <!--<input type="text" style="opacity: 50" id="autoFucus" ng-keydown="keypress($event)" autofocus="autofocus" />-->
         </div>
 
@@ -37,54 +37,39 @@
             <textarea ng-model="text" disabled="disabled" ></textarea>
         </div>
 
-        <div class="col-md-8 spread-bottom" ng-show="selectedView==2">
+        <div class="col-md-8 spread-bottom mid-space env-front" ng-show="selectedView==2">
             <div class="env">
-                <p>מען</p>
                 <div>
-                    <div class="col-md-2"></div>
-                    <div class="col-md-8">
-                        <div class="col-md-2"></div>
-                        <span>שם</span><input type="text" ng-model="toName" />
-                        <div class="col-md-2"></div>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div style="padding-top: 150px "></div>
+                        <input type="text" ng-model="toName" />
+                        <div style="padding-top: 15px "></div>
+                        <input type="text" ng-model="toEmail" />
                     </div>
-                    <div class="col-md-2"></div>
+                    <div class="col-md-4"></div>
                 </div>
                 <div style="clear:both"></div>
-                <div>
-                    <div class="col-md-2"></div>
-                    <div class="col-md-8">
-                        <div class="col-md-2"></div>
-                        <span>כתובת</span><input type="text" ng-model="toEmail" />
-                        <div class="col-md-2"></div>
-                    </div>
-                    <div class="col-md-2"></div>
-                </div>
             </div>
         </div>
 
-        <div class="col-md-8 spread-bottom" ng-show="selectedView==3">
+        <div class="col-md-8 spread-bottom mid-space env-back" ng-show="selectedView==3">
             <div class="env">
-                <p>שולח</p>
-                <div>
-                    <div class="col-md-2"></div>
-                    <div class="col-md-8">
-                        <div class="col-md-2"></div>
-                        <span>שם</span><input type="text" ng-model="fromName" />
-                        <div class="col-md-2"></div>
-                    </div>
-                    <div class="col-md-2"></div>
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <div style="padding-top: 150px "></div>
+                    <input type="text" ng-model="fromName" />
+                    <div style="padding-top: 15px "></div>
+                    <input type="text" ng-model="fromEmail" />
                 </div>
-                <div style="clear:both"></div>
-                <div>
-                    <div class="col-md-2"></div>
-                    <div class="col-md-8">
-                        <div class="col-md-2"></div>
-                        <span>כתובת</span><input type="text" ng-model="fromEmail" />
-                        <div class="col-md-2"></div>
-                    </div>
-                    <div class="col-md-2"></div>
-                </div>
+                <div class="col-md-4"></div>
             </div>
+        </div>
+
+        <div class="col-md-8 spread-bottom" ng-show="selectedView==4">
+            <p>תודה עמית,</p>
+            <p>מכתבך נשלך ויגיע ליעדו בעוד</p>
+            <p>כחמישה ימים.</p>
         </div>
 
         <div class="col-md-2 spread-bottom side-panel">
@@ -96,59 +81,6 @@
         </div>
     </div>
 
-    <!--<div>-->
-    <!--<div id="second-container" class="container" ng-show="selectedView==2">-->
-    <!--<div class="col-md-2 spread-bottom side-panel">-->
-    <!--<img class="logo" src="/images/logo_bigger.png" alt="logo"></img>-->
-    <!--</div>-->
-    <!--<div class="col-md-8 spread-bottom">-->
-    <!--<div class="env">-->
-    <!--<p>מאת</p>-->
-    <!--<div>-->
-    <!--<div class="col-md-2">שם</div>-->
-    <!--<div class="col-md-8"><input type="text" ng-model="fromName" /></div>-->
-    <!--</div>-->
-    <!--<div>-->
-    <!--<div class="col-md-2">כתובת</div>-->
-    <!--<div class="col-md-8"><input type="text" ng-model="fromEmail" /></div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="col-md-2 spread-bottom side-panel">-->
-    <!--<div>-->
-    <!--<button ng-click="sendLetter()">Send</button>-->
-    <!--&lt;!&ndash;<button id="toss" ng-click="tossLetter()">Toss</button>&ndash;&gt;-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-
-    <!--<div>-->
-    <!--<div id="third-container" class="container" ng-show="selectedView==3">-->
-    <!--<div class="col-md-2 spread-bottom side-panel">-->
-    <!--<img class="logo" src="/images/logo_bigger.png" alt="logo"></img>-->
-    <!--</div>-->
-    <!--<div class="col-md-8 spread-bottom">-->
-    <!--<div class="env">-->
-    <!--<p>עבור</p>-->
-    <!--<div>-->
-    <!--<div class="col-md-2">שם</div>-->
-    <!--<div class="col-md-8"><input type="text" ng-model="fromName" /></div>-->
-    <!--</div>-->
-    <!--<div>-->
-    <!--<div class="col-md-2">כתובת</div>-->
-    <!--<div class="col-md-8"><input type="text" ng-model="fromEmail" /></div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--<div class="col-md-2 spread-bottom side-panel">-->
-    <!--<div>-->
-    <!--<button ng-click="sendLetter()">Send</button>-->
-    <!--&lt;!&ndash;<button id="toss" ng-click="tossLetter()">Toss</button>&ndash;&gt;-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
-    <!--</div>-->
 </div>
 
 

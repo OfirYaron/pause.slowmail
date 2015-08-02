@@ -54,6 +54,7 @@ myAppModule.controller("writeController", ["$scope","keymapper", "restGate", fun
 
     $scope.sendLetter = function () {
         $scope.selectedView += 1;
+        $('body').addClass('step2');
         $doc.off('keydown', handler);
         console.log('current step is: ' + $scope.selectedView)
         if ($scope.selectedView==4)

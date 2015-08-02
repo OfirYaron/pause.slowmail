@@ -1,9 +1,16 @@
 body{
-    background-color: #DBCFAD;
+    background-image: url('/images/clear_paper.jpg');
+    background-size: 100% 100%;
+}
+
+body.step2{
+    background-image: url('/images/clear_table.jpg');
 }
 
 textarea {
     resize: none;
+    background-color: transparent;
+    border: none;
 }
 
 .spread-bottom{
@@ -21,7 +28,7 @@ textarea {
 #paper textarea{
     height:700px;
     width:100%;
-    padding: 15px;
+    padding: 60px;
 }
 
 #toss{
@@ -62,12 +69,12 @@ textarea {
 
 .env{
     height:350px;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
 }
 
 .env input{
     border: none;
-    border-bottom: 1px solid gray;
+    /*border-bottom: 1px solid gray;*/
     background-color: transparent;
 }
 .env span{
@@ -82,3 +89,18 @@ img.logo{
     position: relative;
 }
 
+.mid-space{
+    padding-top: 100px;
+}
+
+.env-front{
+    background-image: url('/images/env_front.png');
+    background-position-x: -166px;
+    background-position-y: -94px;
+}
+
+.env-back{
+    background-image: url('/images/env_back.png');
+    background-position-x: -166px;
+    background-position-y: -94px;
+}

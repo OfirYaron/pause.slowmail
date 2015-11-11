@@ -1,0 +1,14 @@
+{
+  "name": "eGeret",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "~1.4.*",
+    "angular-bootstrap": "~0.13.3",
+    "angular-ui-router": "~0.2.10",
+    "bootstrap": "~3.2.0",
+    "polymer": "Polymer/polymer#^1.0.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4.*"
+  }
+}

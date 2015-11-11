@@ -1,0 +1,14 @@
+{
+  "generator-ng-poly": {
+    "appScript": "es6",
+    "controllerAs": true,
+    "directiveTemplateUrl": true,
+    "e2eTestFramework": "jasmine",
+    "markup": "html",
+    "ngRoute": false,
+    "structure": "module-type",
+    "style": "scss",
+    "testFramework": "jasmine",
+    "testScript": "es6"
+  }
+}

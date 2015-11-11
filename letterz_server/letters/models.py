@@ -17,8 +17,7 @@ class Letter(models.Model):
     from_email = models.EmailField()
     to_name = models.CharField(max_length=50)
     to_email = models.EmailField()
-    content = models.TextField()
-    settings = models.TextField()  # Should be JSON, but...
+    content = models.TextField()  # Should be JSON, but...
     hex_id = models.CharField(max_length=10,
                               default=random_hex,
                               blank=True,

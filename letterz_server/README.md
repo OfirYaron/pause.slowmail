@@ -13,7 +13,7 @@ Make sure redis is installed and running (on its default port 6379)
     source env/bin/activate
 
     # install requirements
-    pip install -r requirements
+    pip install -r requirements.txt
 
     # migrate and createsuper user to use the admin @   localhost:8000/admin
     python manage.py migrate

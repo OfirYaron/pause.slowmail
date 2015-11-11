@@ -19,7 +19,7 @@ from django.http import HttpResponseRedirect
 
 
 def redirect_to_index(request):
-    return HttpResponseRedirect('index.html/')
+    return HttpResponseRedirect('/static/index.html')
 
 
 urlpatterns = [
@@ -27,6 +27,4 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^api/', include('letters.urls')),
     url(r'^$', redirect_to_index),
-    # Statics (including htmls from frontend)
-    url(r'^(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'static'})
 ]
